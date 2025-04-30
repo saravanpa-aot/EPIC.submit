@@ -2,7 +2,7 @@ FROM python:3.9-buster
 
 USER root
 
-# Create working directory
+# Create working directory testing release
 RUN mkdir /opt/app-root && chmod 755 /opt/app-root
 WORKDIR /opt/app-root
 
