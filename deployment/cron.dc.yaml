@@ -3,7 +3,8 @@ kind: Template
 metadata:
   name: cron-deploy-template
   annotations:
-    description: "Deployment Configuration Template for the Submit Cron job Project"
+    description: "Deployment Configuration Template for the Submit Cron job Project"say
+    
     tags: "submit, cron, python"
 objects:
 - kind: DeploymentConfig
