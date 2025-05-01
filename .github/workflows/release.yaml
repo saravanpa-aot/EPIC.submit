@@ -1,19 +1,25 @@
-name: Release Please
+name: Update Changelog on Push to Main
 
 on:
   push:
     branches:
-      - develop  # or 'master', or whichever is your default branch
+      - develop
 
 jobs:
-  release:
+  generate-changelog:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Run Release Please
-        uses: google-github-actions/release-please-action@v4
         with:
-          release-type: simple
+          fetch-depth: 0  # Required to access full commit history
+
+      - name: Update Changelog
+        uses: TriPSs/conventional-changelog-action@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          output-file: CHANGELOG.md
+          skip-version-file: true
+          skip-commit: false
+          tag-prefix: ""
