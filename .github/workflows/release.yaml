@@ -23,4 +23,4 @@ jobs:
           skip-version-file: true
           skip-commit: false
           tag-prefix: ""
-          config-file: .versionrc.json
+  
