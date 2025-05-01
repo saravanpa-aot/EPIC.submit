@@ -1,4 +1,4 @@
-name: Update Changelog on Push to Main
+name: Update Changelog on Push to Develop
 
 on:
   push:
@@ -23,5 +23,7 @@ jobs:
           output-file: CHANGELOG.md
           skip-version-file: true
           skip-commit: false
+          skip-on-empty: false          # Optional: show even if nothing new
           tag-prefix: ""
-  
+          version-file: ""              
+          version-path: ""              
