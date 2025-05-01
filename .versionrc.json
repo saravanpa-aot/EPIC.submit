@@ -8,5 +8,7 @@
     { "type": "style", "section": "🎨 Style" },
     { "type": "test", "section": "🧪 Tests" },
     { "type": "*", "section": "🗃 Other Changes", "hidden": false }
-  ]
+  ],
+  "releaseCount": 0,
+  "skipUnstable": true
 }
