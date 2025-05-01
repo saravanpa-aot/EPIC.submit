@@ -17,6 +17,7 @@ A submit Python flask API application to be used as a template.
 ## Environment Variables
 
 The development scripts for this application allow customization via an environment file in the root directory called `.env`. See an example of the environment variables that can be overridden in `sample.env`.
+sdf
 
 ## Commands
 
