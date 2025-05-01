@@ -6,7 +6,7 @@ USER root
 RUN mkdir /opt/app-root && chmod 755 /opt/app-root
 WORKDIR /opt/app-root
 
-# Install the requirements
+# Install the requirements just a change to test the 
 COPY ./requirements.txt .
 
 RUN pip install --upgrade pip
