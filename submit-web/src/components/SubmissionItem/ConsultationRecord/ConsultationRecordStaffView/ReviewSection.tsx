@@ -70,20 +70,16 @@ export default function ReviewSection() {
 
     return {
       staff: {
-        passedConsultationCheck: staffAnswers?.passedConsultationCheck
-          ? String(staffAnswers.passedConsultationCheck)
-          : "",
+        passedConsultationCheck: staffAnswers?.passedConsultationCheck ?? "",
       },
       manager: {
-        passedConsultationCheck: managerAnswers?.passedConsultationCheck
-          ? String(managerAnswers.passedConsultationCheck)
-          : "",
+        passedConsultationCheck: managerAnswers?.passedConsultationCheck ?? "",
       },
       update_request: {
-        reason: managerAnswers?.reason || staffAnswers?.reason || "",
+        reason: managerAnswers?.reason ?? staffAnswers?.reason ?? "",
         submission_item_types:
-          managerAnswers?.submission_item_types ||
-          staffAnswers?.submission_item_types ||
+          managerAnswers?.submission_item_types ??
+          staffAnswers?.submission_item_types ??
           [],
       },
     };
@@ -133,8 +129,10 @@ export default function ReviewSection() {
                 bgcolor: BCDesignTokens.themeBlue60,
                 width: 1,
                 my: BCDesignTokens.layoutMarginXsmall,
+                mb: BCDesignTokens.layoutMarginMedium,
               }}
             />
+            <NotesSection />
             <Typography
               variant="body1"
               sx={{ fontWeight: BCDesignTokens.typographyFontWeightsBold }}
@@ -180,7 +178,6 @@ export default function ReviewSection() {
                 </ControlledRadioGroup>
               </>
             </PermissionsGate>
-            <NotesSection />
             <When condition={failedConsultationCheck}>
               <AddRequestSection disabled={isFormDisabled} />
             </When>

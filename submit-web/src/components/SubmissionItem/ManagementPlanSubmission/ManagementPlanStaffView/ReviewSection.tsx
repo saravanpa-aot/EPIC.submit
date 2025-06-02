@@ -37,7 +37,6 @@ import NotesSection from "../../NotesSection";
 import { When } from "react-if";
 import AddRequestSection from "../../AddRequestSection";
 import { NotificationBox } from "./NotificationBox";
-import { get } from "lodash";
 
 type managementPlanReviewForm = yup.InferType<
   typeof managementPlanReviewSchema
@@ -86,10 +85,10 @@ export default function ReviewSection() {
 
     return {
       staff: {
-        passedReview: get(staffAnswers, "passedReview", ""),
+        passedReview: staffAnswers?.passedReview ?? "",
       },
       manager: {
-        passedReview: get(managerAnswers, "passedReview", ""),
+        passedReview: managerAnswers?.passedReview ?? "",
       },
       update_request: {
         reason: managerAnswers?.reason ?? staffAnswers?.reason ?? "",
@@ -122,7 +121,8 @@ export default function ReviewSection() {
     (isStaff &&
       submissionItem?.review?.status ===
         SUBMISSION_REVIEW_STATUS.PENDING_MANAGER_REVIEW) ||
-    submissionItem?.review?.status === SUBMISSION_REVIEW_STATUS.APPROVED;
+    submissionItem?.review?.status === SUBMISSION_REVIEW_STATUS.APPROVED ||
+    submissionItem?.review?.status === SUBMISSION_REVIEW_STATUS.REJECTED;
 
   return (
     <Grid item container>
@@ -144,8 +144,10 @@ export default function ReviewSection() {
                 bgcolor: BCDesignTokens.themeBlue60,
                 width: 1,
                 my: BCDesignTokens.layoutMarginXsmall,
+                mb: BCDesignTokens.layoutMarginMedium,
               }}
             />
+            <NotesSection />
             <Typography
               variant="body1"
               sx={{ fontWeight: BCDesignTokens.typographyFontWeightsBold }}
@@ -201,7 +203,6 @@ export default function ReviewSection() {
                 </ControlledRadioGroup>
               </>
             </PermissionsGate>
-            <NotesSection />
             <When condition={failedManagementPlan}>
               <AccordionSummary
                 expandIcon={null}
