@@ -12,6 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""The Test-Suite used to ensure that the Model objects are working correctly."""
+"""The Test-Suite used to ensure that the Model objects are working correctly.just testing"""
 
 from src.submit_api.models.account_project import AccountProject
