@@ -6,7 +6,7 @@ A submit Python flask API application to be used as a template.
 
 ### Development Environment
 * Install the following:
-    - [Python](https://www.python.org/)
+    - [Python 3.12](https://www.python.org/)
     - [Docker](https://www.docker.com/)
     - [Docker-Compose](https://docs.docker.com/compose/install/)
 * Install Dependencies

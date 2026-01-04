@@ -6,7 +6,7 @@ Python job scheduler application for The Submit project.
 
 ### Development Environment
 * Install the following:
-    - [Python](https://www.python.org/)
+    - [Python 3.12](https://www.python.org/)
 * Install Dependencies
     - Run `make setup` in the root of the project (submit-api)
 
@@ -41,4 +41,4 @@ Before running the following commands run `. venv/bin/activate` to enter into th
 To run submit-cron functionality on your local machine execute the pyhton commands located in the run files of this directory.
 For example the `run_emailer.sh` file contains the coammnd to publish a scheduled engagement 
 
->`python3 invoke_jobs.py ENGAGEMENT_PUBLISH` 
+>`python3.12 invoke_jobs.py ENGAGEMENT_PUBLISH` 

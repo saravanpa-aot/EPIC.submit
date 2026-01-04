@@ -37,7 +37,7 @@ clean-test: ## clean test files
 	rm -fr htmlcov/
 
 install: clean ## Install python virtrual environment
-	test -f venv/bin/activate || python3.9 -m venv  $(CURRENT_ABS_DIR)/venv
+	test -f venv/bin/activate || python3.12 -m venv  $(CURRENT_ABS_DIR)/venv
 	. venv/bin/activate ;\
 	pip install --upgrade pip ;\
 	pip install -Ur requirements/prod.txt ;\
@@ -127,19 +127,19 @@ run: ## Run the project in local
 	./docker-entrypoint.sh
 
 run_etl: ## Run the etl task in local
-	. venv/bin/activate && python invoke_jobs.py EXTRACT_submit
+	. venv/bin/activate && python3.12 invoke_jobs.py EXTRACT_submit
 
 run_closeout: ## Run the closeout task in local
-	. venv/bin/activate && python invoke_jobs.py ENGAGEMENT_CLOSEOUT
+	. venv/bin/activate && python3.12 invoke_jobs.py ENGAGEMENT_CLOSEOUT
 
 run_publish: ## Run the publish task in local
-	. venv/bin/activate && python invoke_jobs.py ENGAGEMENT_PUBLISH
+	. venv/bin/activate && python3.12 invoke_jobs.py ENGAGEMENT_PUBLISH
 
 run_purge: ## Run the publish task in local
-	. venv/bin/activate && python invoke_jobs.py PURGE
+	. venv/bin/activate && python3.12 invoke_jobs.py PURGE
 
 db: ## Update the local database
-	. venv/bin/activate && python manage.py db upgrade
+	. venv/bin/activate && python3.12 manage.py db upgrade
 
 #################################################################################
 # Self Documenting Commands                                                     #

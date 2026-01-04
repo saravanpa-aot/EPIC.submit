@@ -47,10 +47,10 @@ make run
 
 ## Backend Setup on Windows
 
-## Step 1: Download the Latest Python Version
+## Step 1: Download Python 3.12.x
 
 1. Visit the official Python website: [Python Downloads](https://www.python.org/downloads/)
-2. Download and install the latest version of Python for your operating system.
+2. Download and install Python 3.12.x for your operating system.
 
 
 ## Step 4: Set Environment Variables
@@ -79,17 +79,17 @@ make run
     cd submit-api
 
 3. Create a virtual environment. Refer to the official Python documentation on how to create a virtual environment: [Python venv](https://docs.python.org/3/library/venv.html).
-    python -m venv venv
+    py -3.12 -m venv venv
 
 4. Activate the virtual environment:
     - venv\Scripts\activate
 
 5. Install the required Python packages from both `dev.txt` and `prod.txt` requirements files:
-    python -m pip install -r path/to/requirements/dev.txt
-    python -m pip install -r path/to/requirements/prod.txt
+    py -3.12 -m pip install -r path/to/requirements/dev.txt
+    py -3.12 -m pip install -r path/to/requirements/prod.txt
 
 6. Run your Flask app using the Flask CLI:
-    - python -m flask run -p 5000
+    - py -3.12 -m flask run -p 5000
 
 ## Front End Setup
 
